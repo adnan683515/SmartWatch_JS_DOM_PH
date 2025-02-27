@@ -82,10 +82,10 @@
                 </div>
 
                 <div class="flex gap-2">
-                    <div class="lg:w-[3%] lg:h-6 h-7 w-[8%]  bg-purple-700 rounded-full"></div>
-                    <div class="lg:w-[3%] lg:h-6 h-7 w-[8%] bg-green-700 rounded-full"></div>
-                    <div class="lg:w-[3%] lg:h-6 h-7 w-[8%] bg-sky-700 rounded-full"></div>
-                    <div class="lg:w-[3%] lg:h-6 h-7 w-[8%] bg-black   rounded-full"></div>
+                    <div id="purple" class="lg:w-[3%] lg:h-6 h-7 w-[8%]  bg-purple-700 rounded-full"></div>
+                    <div id="green" class="lg:w-[3%] lg:h-6 h-7 w-[8%] bg-green-700 rounded-full"></div>
+                    <div id="sky-blue" class="lg:w-[3%] lg:h-6 h-7 w-[8%] bg-sky-700 rounded-full"></div>
+                    <div id="black" class="lg:w-[3%] lg:h-6 h-7 w-[8%] bg-black   rounded-full"></div>
                 </div>
 
 
@@ -114,18 +114,18 @@
 
                 <div class="my-6 flex gap-5">
 
-                    <div class="flex justify-center items-center">
+                    <div class="flex justify-center border border-gray-400 rounded-md px-4 items-center">
                         <div class="flex gap-4">
-                            <div><i class="fa-solid fa-minus fa-xl"></i></div>
+                            <div id="negative-icon"><i class="fa-solid fa-minus fa-xl"></i></div>
                             <div>
-                                <h1>0</h1>
+                                <h1 id="quantity-of-add-to-cart">0</h1>
                             </div>
-                            <div><i class="fa-solid fa-plus fa-xl"></i></div>
+                            <div id="positive-icon"><i class="fa-solid fa-plus fa-xl"></i></div>
                         </div>
                     </div>
 
                     <div class="flex gap-3">
-                        <div class="bg-purple-600 hover:duration-500 hover:scale-75 ease-in cursor-pointer  lg:px-10 lg:py-4 px-8 py-2 text-white rounded-md ">
+                        <div class="bg-purple-600 hover:duration-800 hover:scale-75 ease-in cursor-pointer  lg:px-10 lg:py-4 px-8 py-2 text-white rounded-md ">
                             <button class="cursor-pointer  ">Add to Cart</button>
                         </div>
                         
@@ -137,18 +137,20 @@
 
 
             </div>
-            <div class="card bg-base-100 w-full max-w-sm shrink-0 ">
-                <div class="card-body">
-                    <div id="img-1"><img src="images/cyan.png" alt=""></div>
-                    <div id="img-2"><img src="images/gray.png" alt=""></div>
-                    <div id="img-3"><img src="images/purple.png" alt=""></div>
-                    <div id="img-4"><img src="images/teal.png" alt=""></div>
+            <div class="card bg-base-100 max-w-lg   shrink-0 ">
+                <div class="card-body w-full ">
+                    <div  id="img-cyan"><img  src="images/cyan.png" alt=""></div>
+                    <div id="img-gray"><img src="images/gray.png" alt=""></div>
+                    <div id="img-purple"><img src="images/purple.png" alt=""></div>
+                    <div id="img-teal"><img src="images/teal.png" alt=""></div>
                 </div>
             </div>
         </div>
     </div>
 
 
+    <script src="utilies/toggle.js"></script>
+    <script src="js/watch.js"></script>
 </body>
 
 </html>
