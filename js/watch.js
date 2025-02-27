@@ -28,10 +28,22 @@ document.getElementById('sky-blue').addEventListener('click',function(){
     ToggleFunById('img-gray','none');
     ToggleFunById('img-teal','none');
 })
-
 document.getElementById('positive-icon').addEventListener('click',function(event){
     SetInnerTextIncrement('quantity-of-add-to-cart');
 })
 document.getElementById('negative-icon').addEventListener('click',function(){
     SetInnerTextDeccrement('quantity-of-add-to-cart')
 })
+document.getElementById('box-1').addEventListener('click',function(){
+    SeTBorderByID('box-1','box-2','box-3','box-4')
+})
+document.getElementById('box-2').addEventListener('click',function(){
+    SeTBorderByID('box-2','box-1','box-3','box-4')
+})
+document.getElementById('box-3').addEventListener('click',function(){
+    SeTBorderByID('box-3','box-2','box-1','box-4')
+})
+document.getElementById('box-4').addEventListener('click',function(){
+    SeTBorderByID('box-4','box-2','box-3','box-1')
+})
+
