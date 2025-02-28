@@ -66,9 +66,11 @@ document.getElementById('add-to-cart-btn').addEventListener('click', function ()
     // checout-quantity
     let addToCartQuantity = parseInt(document.getElementById('quantity-of-add-to-cart').innerText);
     const checkOutQuantity = parseInt(document.getElementById('checout-quantity').innerText)
+    const navQuantity = parseInt(document.getElementById('nav-quantity').innerText)
     if (addToCartQuantity > 0) {
         document.getElementById('check-out-btn').classList.remove('hidden')
         document.getElementById('checout-quantity').innerText = addToCartQuantity + checkOutQuantity;
+        document.getElementById('nav-quantity').innerText = addToCartQuantity + navQuantity;
     }
     else{
         alert("Please Select a quantity .....")
