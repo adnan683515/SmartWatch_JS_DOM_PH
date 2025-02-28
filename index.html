@@ -25,6 +25,58 @@
 
 <body class="roboto">
 
+
+    <header>
+        <nav>
+            <div class="navbar bg-purple-600 text-white shadow-sm">
+                <div class="flex-1">
+                    <a class="btn btn-ghost text-xl">daisyUI</a>
+                </div>
+                <div class="flex-none">
+                    <div class="dropdown dropdown-end">
+                        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                            <div class="indicator">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                                <span class="badge badge-sm indicator-item">8</span>
+                            </div>
+                        </div>
+                        <div tabindex="0" class="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow">
+                            <div class="card-body">
+                                <span class="text-lg font-bold">8 Items</span>
+                                <span class="text-info">Subtotal: $999</span>
+                                <div class="card-actions">
+                                    <button class="btn btn-primary btn-block">View cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown dropdown-end">
+                        <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                            <div class="w-10 rounded-full">
+                                <img alt="Tailwind CSS Navbar component"
+                                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                            </div>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            <li>
+                                <a class="justify-between">
+                                    Profile
+                                    <span class="badge">New</span>
+                                </a>
+                            </li>
+                            <li><a>Settings</a></li>
+                            <li><a>Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
     <div class="hero bg-base-200 min-h-screen">
         <div class="hero-content flex-col lg:flex-row-reverse">
             <div class="text-center lg:text-left">
@@ -82,10 +134,12 @@
                 </div>
 
                 <div class="flex gap-2">
-                    <div id="purple" class="lg:w-[3%] lg:h-6 h-7 w-[8%]  bg-purple-700 rounded-full"></div>
-                    <div id="green" class="lg:w-[3%] lg:h-6 h-7 w-[8%] bg-green-700 rounded-full"></div>
-                    <div id="sky-blue" class="lg:w-[3%] lg:h-6 h-7 w-[8%] bg-sky-700 rounded-full"></div>
-                    <div id="black" class="lg:w-[3%] lg:h-6 h-7 w-[8%] bg-black   rounded-full"></div>
+                    <div id="purple" class="lg:w-[3%] ring-color-btn   lg:h-6 h-7 w-[8%]  bg-purple-700 rounded-full">
+                    </div>
+                    <div id="green" class="lg:w-[3%] ring-color-btn  lg:h-6 h-7 w-[8%] bg-green-700 rounded-full"></div>
+                    <div id="sky-blue" class="lg:w-[3%] ring-color-btn  lg:h-6 h-7 w-[8%] bg-sky-700 rounded-full">
+                    </div>
+                    <div id="black" class="lg:w-[3%] ring-color-btn  lg:h-6 h-7 w-[8%] bg-black   rounded-full"></div>
                 </div>
 
 
@@ -125,10 +179,11 @@
                     </div>
 
                     <div class="flex gap-3">
-                        <div class="bg-purple-600 hover:duration-800 hover:scale-75 ease-in cursor-pointer  lg:px-10 lg:py-4 px-8 py-2 text-white rounded-md ">
+                        <div id="add-to-cart-btn"
+                            class="bg-purple-600 hover:duration-800 hover:scale-75 ease-in cursor-pointer  lg:px-10 lg:py-4 px-8 py-2 text-white rounded-md ">
                             <button class="cursor-pointer  ">Add to Cart</button>
                         </div>
-                        
+
                         <div class="flex justify-center  items-center hover:animate-ping ">
                             <i class="fa-solid fa-heart fa-xl" style="color: #7f60df;"></i>
                         </div>
@@ -139,15 +194,136 @@
             </div>
             <div class="card bg-base-100 max-w-lg   shrink-0 ">
                 <div class="card-body w-full ">
-                    <div  id="img-cyan"><img  src="images/cyan.png" alt=""></div>
+                    <div id="img-cyan"><img src="images/cyan.png" alt=""></div>
                     <div id="img-gray"><img src="images/gray.png" alt=""></div>
                     <div id="img-purple"><img src="images/purple.png" alt=""></div>
                     <div id="img-teal"><img src="images/teal.png" alt=""></div>
                 </div>
             </div>
+
+
+
+
+
         </div>
     </div>
+    <div onclick="my_modal_5.showModal()" class="flex justify-center items-center my-4">
+        <button id="check-out-btn"
+            class="btn px-10  hidden bg-orange-400 text-white rounded-full btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl">checkout
+            <span id="checout-quantity" class="bg-white px-3 py-1 text-black rounded-md">0</span> </button>
 
+    </div>
+
+
+    <!-- modal of checkout  -->
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+            <h3 class="text-lg font-bold">All Item List!</h3>
+
+            <div class="overflow-x-auto">
+                <table class="table">
+                    <!-- head -->
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Color</th>
+                            <th>Size</th>
+                            <th>Quantity </th>
+                            <th>Price </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- row 1 -->
+                        <tr>
+                            <th>1</th>
+                            <td>Cy Ganderton</td>
+                            <td>Quality Control Specialist</td>
+                            <td>Blue</td>
+                        </tr>
+                        <!-- row 2 -->
+                        <tr>
+                            <th>2</th>
+                            <td>Hart Hagerty</td>
+                            <td>Desktop Support Technician</td>
+                            <td>Purple</td>
+                        </tr>
+                        <!-- row 3 -->
+                        <tr>
+                            <th>3</th>
+                            <td>Brice Swyre</td>
+                            <td>Tax Accountant</td>
+                            <td>Red</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <div class="flex gap-3">
+                        <div>
+                            <button class="btn">Continue Shopping....</button>
+                        </div>
+                        <div>
+                            <button class="btn text-white bg-purple-500">Close</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+
+    <!-- Open the modal using ID.showModal() method -->
+
+
+
+
+
+    <footer class="footer sm:footer-horizontal bg-purple-700 text-white text-base-content p-10">
+        <nav>
+            <h6 class="footer-title">Services</h6>
+            <a class="link link-hover">Branding</a>
+            <a class="link link-hover">Design</a>
+            <a class="link link-hover">Marketing</a>
+            <a class="link link-hover">Advertisement</a>
+        </nav>
+        <nav>
+            <h6 class="footer-title">Company</h6>
+            <a class="link link-hover">About us</a>
+            <a class="link link-hover">Contact</a>
+            <a class="link link-hover">Jobs</a>
+            <a class="link link-hover">Press kit</a>
+        </nav>
+        <nav>
+            <h6 class="footer-title">Social</h6>
+            <div class="grid grid-flow-col gap-4">
+                <a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        class="fill-current">
+                        <path
+                            d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z">
+                        </path>
+                    </svg>
+                </a>
+                <a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        class="fill-current">
+                        <path
+                            d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z">
+                        </path>
+                    </svg>
+                </a>
+                <a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        class="fill-current">
+                        <path
+                            d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </footer>
 
     <script src="utilies/toggle.js"></script>
     <script src="js/watch.js"></script>
